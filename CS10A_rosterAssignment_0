@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void display(string roster[20], int numused)
+{
+	for (int i = 0; i < 20; i++)
+	{
+		cout << roster[i] << endl;
+	}
+}
+
+void firstinitial(string roster[20], int numused)
+{
+	for (int i = 0; i < numused; i++)
+	{
+		cout << roster[i].substr(0, 1) << endl;
+	}
+}
+
+void load(string roster[20])
+{	
+	int q = 0;
+	int numused = 0;
+	string name;
+	cout << "Enter names for up to 20 students (q to quit): \n";
+	if (cin >> q)
+	{
+		//...
+	} //makeif q then proceed
+	while (cin >> name && numused < 20)
+	{
+		roster[numused] = name;
+		numused++;
+	}
+	display(roster, numused);
+	firstinitial(roster, numused);
+}
+
+int main()
+{
+	string roster[20];
+	load(roster);
+	system("pause");
+	return 0;
+}
+
+//useful structure
+/*
+	const int size = 20;
+	roster[size]; // studArray == students
+	for (int i = 0; i < size; i++)
+	{
+		cout << roster[i] << endl;
+	}
+	*/
